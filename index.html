@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walli e a Equipe Guardiã</title>
+<meta name="description" content="Walli e a Equipe Guardiã: Uma Batalha Contra Bart. Adquira seu livro por R$ 19,99.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#07090d;color:#fff;line-height:1.5}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:35px 18px;
+background:radial-gradient(circle at 75% 20%,#8b160f 0,#280b0b 25%,transparent 48%),
+radial-gradient(circle at 20% 20%,#063b61 0,#07141f 35%,#07090d 70%)}
+.container{max-width:1050px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.cover{width:min(100%,410px);display:block;margin:auto;border-radius:14px;box-shadow:0 25px 70px #000;transform:rotate(-1deg)}
+.badge{display:inline-block;background:#e31b13;padding:8px 14px;border-radius:999px;font-weight:800;font-size:13px;margin-bottom:16px}
+h1{font-size:clamp(38px,6vw,68px);line-height:.98;text-transform:uppercase;margin-bottom:18px}
+h1 span{color:#ef3027}
+.subtitle{font-size:20px;color:#c9c9c9;margin-bottom:24px}
+.price{font-size:46px;font-weight:900;margin:15px 0}
+.price small{font-size:16px;color:#aaa;font-weight:normal}
+.buy{display:block;text-align:center;text-decoration:none;background:#e51e16;color:white;font-weight:900;padding:17px 22px;border-radius:12px;font-size:20px;box-shadow:0 10px 30px #e51e1644;cursor:pointer}
+.buy:hover{filter:brightness(1.1)}
+.section{padding:60px 18px;background:#0d1118}
+.box{max-width:900px;margin:auto}
+h2{font-size:34px;margin-bottom:22px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#151b25;border:1px solid #26303e;border-radius:15px;padding:22px}
+.card b{display:block;margin-bottom:8px;font-size:18px}
+.pix{padding:60px 18px;background:linear-gradient(180deg,#0d1118,#080a0e)}
+.pixbox{max-width:620px;margin:auto;background:#121821;border:1px solid #293443;border-radius:18px;padding:28px}
+.pixkey{background:#080b10;border:1px dashed #4c5a6d;padding:16px;border-radius:10px;word-break:break-all;margin:15px 0;color:#fff}
+.copy{width:100%;border:0;background:#fff;color:#090b0f;padding:14px;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
+.notice{font-size:13px;color:#9da7b4;margin-top:14px}
+footer{text-align:center;padding:25px;color:#707b88;font-size:13px}
+@media(max-width:760px){.container{grid-template-columns:1fr;gap:30px}.cover{max-width:330px}.features{grid-template-columns:1fr}h1{font-size:43px}.hero{padding-top:25px}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div><img class="cover" src="capa-walli.png" alt="Capa de Walli e a Equipe Guardiã"></div>
+    <div>
+      <div class="badge">LIVRO • AVENTURA • AÇÃO</div>
+      <h1>Walli e a Equipe <span>Guardiã</span></h1>
+      <p class="subtitle">Uma batalha contra Bart. Uma equipe. Uma missão. Uma aventura que você não vai esquecer.</p>
+      <div class="price">R$ 19,99 <small>pagamento via PIX</small></div>
+      <a class="buy" href="#pix">COMPRAR AGORA</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="box">
+    <h2>Por que ler?</h2>
+    <div class="features">
+      <div class="card"><b>⚔️ Ação</b>Uma batalha cheia de tensão e desafios.</div>
+      <div class="card"><b>🛡️ Equipe</b>Walli e seus aliados precisam agir juntos.</div>
+      <div class="card"><b>🔥 Aventura</b>Uma história para mergulhar do começo ao fim.</div>
+    </div>
+  </div>
+</section>
+
+<section class="pix" id="pix">
+  <div class="pixbox">
+    <h2>Comprar por PIX</h2>
+    <p>Valor: <strong>R$ 19,99</strong></p>
+
+    <!-- TROQUE SOMENTE O VALOR ABAIXO PELA CHAVE PIX DO RECEBEDOR -->
+    <input
+  id="pixKey"
+  class="pixkey"
+  value="22930600713"
+  readonly
+  style="width:100%;font-size:18px;border:1px dashed #4c5a6d;background:#080b10;color:white;"
+>
+
+<button class="copy" onclick="copiarPix()">COPIAR CHAVE PIX</button>
+    <p class="notice">Depois do pagamento, envie o comprovante ao responsável pela venda para receber o livro. A confirmação do pagamento é feita pelo responsável.</p>
+  </div>
+</section>
+
+<footer>© 2026 Walli e a Equipe Guardiã</footer>
+
+<script>
+function copiarPix(){
+  const key = document.getElementById("pixKey").value;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(key);
+  } else {
+    const input = document.getElementById("pixKey");
+    input.select();
+    document.execCommand("copy");
+  }
+  const btn = document.querySelector(".copy");
+  btn.innerText = "✓ CHAVE COPIADA!";
+  setTimeout(() => btn.innerText = "COPIAR CHAVE PIX", 1800);
+}
+</script>
+</body>
+</html>
